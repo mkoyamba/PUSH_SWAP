@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:05:34 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/02/24 14:17:26 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2022/02/24 21:04:19 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	check_two_arg(char *str)
 		if (!(str[n] == '-' || str[n] == '+'  || ft_isdigit(str[n])))
 			return (0);
 		n++;
-		while (str[n] && ft_isdigit(str[n]))
+		while (str[n] && (ft_isdigit(str[n]) || str[n] == '.'))
 			n++;
-		if (str[n] && str[n] != ' ')
+		if (str[n] && str[n] != ' ' && str[n] != '\t')
 			return (0);
 		n++;
 	}
@@ -94,7 +94,7 @@ void	stack_index(t_data *main_data)
 
 	new_stack = malloc(main_data->len * sizeof(int));
 	if (!new_stack)
-		stack_free(main_data);
+		stack_free(main_data, 1);
 	n = 0;
 	get_max(main_data, new_stack);
 	while (n < main_data->len - 1)
@@ -127,5 +127,6 @@ t_data	*main_init(char **av, int ac)
 		main_data->len += 1;
 	main_data->sep = main_data->len;
 	stack_init(main_data, data);
+	stack_index(main_data);
 	return (main_data);
 }

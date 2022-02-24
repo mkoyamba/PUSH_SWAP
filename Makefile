@@ -6,7 +6,7 @@
 #    By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/21 11:29:03 by mkoyamba          #+#    #+#              #
-#    Updated: 2022/02/24 14:35:00 by mkoyamba         ###   ########.fr        #
+#    Updated: 2022/02/24 19:00:04 by mkoyamba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRC =	push_swap.c \
 		push_swap_utils.c \
 		push_swap_init_utils.c \
 		push_swap_init_tools.c \
-		move_ss.c \
+		move_ps.c \
+		move_rr.c \
 		main.c \
 
 all: $(NAME)

@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:14:15 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/02/24 14:34:43 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2022/02/24 21:18:33 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	check_argv(char **av, int ac)
 	{
 		while (n < ft_strlen(av[i]))
 		{
-			if (av[i][n] == '+' || av[i][n] == '-')
+			if (n == 0 && (av[i][0] == '+' || av[i][0] == '-'))
 				n++;
-			if (!av[i][n] || !ft_isdigit(av[i][n]))
+			if (av[i][n] && !ft_isdigit(av[i][n]))
 				return (0);
 			n++;
 		}
@@ -89,3 +89,5 @@ int	check_stack_double(char **data)
 	}
 	return (1);
 }
+
+void	swap_stack()
