@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 11:40:41 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/02/24 21:17:13 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2022/02/24 22:13:13 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int		is_sorted(t_data *main_data);
 void	move_ra(t_data *main_data);
 void	move_pb(t_data *main_data);
 void	move_pa(t_data *main_data);
+void	swap_stack(t_data *main_data);
 
 //TEST
 

@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:14:15 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/02/24 21:18:33 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2022/02/24 22:11:03 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,17 @@ int	check_stack_double(char **data)
 	return (1);
 }
 
-void	swap_stack()
+void	swap_stack(t_data *main_data)
+{
+	int	n;
+	int	temp;
+
+	n = 0;
+	while (n < main_data->len / 2)
+	{
+		temp = main_data->stack[n];
+		main_data->stack[n] = main_data->stack[main_data->len - n - 1];
+		main_data->stack[main_data->len - n - 1] = temp;
+		n++;
+	}
+}

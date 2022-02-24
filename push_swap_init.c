@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:05:34 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/02/24 21:04:19 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2022/02/24 22:15:50 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ t_data	*main_init(char **av, int ac)
 	n = 0;
 	data = stack_char(av, ac);
 	if (!data || !check_atoi(data)
-		|| !check_stack_double(stack_char(av, ac)))
+		|| !check_stack_double(data))
 		stop_error();
 	if (!data[0])
 		data_free(data, 1);
