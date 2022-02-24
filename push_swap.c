@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 11:56:26 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/02/24 21:03:00 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2022/02/24 22:37:21 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	push_swap(t_data *main_data)
 		i = 0;
 		while (i < main_data->len)
 		{
-			if(!((main_data->stack[0] >> n) & 1))
+			if (!((main_data->stack[0] >> n) & 1))
 				move_pb(main_data);
 			else if (main_data->sep < 2)
 				break ;

@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:05:34 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/02/24 22:15:50 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2022/02/24 22:36:05 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	check_two_arg(char *str)
 		return (0);
 	while (n < ft_strlen(str))
 	{
-		if (!(str[n] == '-' || str[n] == '+'  || ft_isdigit(str[n])))
+		if (!(str[n] == '-' || str[n] == '+' || ft_isdigit(str[n])))
 			return (0);
 		n++;
 		while (str[n] && (ft_isdigit(str[n]) || str[n] == '.'))
@@ -65,7 +65,7 @@ static char	**stack_char(char **av, int ac)
 	return (data);
 }
 
-static void	stack_init(t_data *main_data,char **data)
+static void	stack_init(t_data *main_data, char **data)
 {
 	int	n;
 	int	i;
