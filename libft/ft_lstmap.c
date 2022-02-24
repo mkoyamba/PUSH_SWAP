@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 17:39:50 by mkoyamba          #+#    #+#             */
-/*   Updated: 2021/12/10 13:52:06 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2022/02/23 11:54:16 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	mk_lstiter(t_list *lst, void *(*f)(void *))
 	}
 }
 
-static t_list	*mk_lstdup(t_list *lst)
+t_list	*ft_lstdup(t_list *lst)
 {
 	t_list	*dup;
 	t_list	*temp_dup;
@@ -52,7 +52,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst)
 		return (NULL);
-	result = mk_lstdup(lst);
+	result = ft_lstdup(lst);
 	if (!result)
 	{
 		del(lst);

@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 12:59:50 by mkoyamba          #+#    #+#             */
-/*   Updated: 2021/12/13 12:01:01 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2022/02/24 12:12:57 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ static int	mk_check_atoi(const char *str, int n, int s)
 	l = 0;
 	while (str[n + a] >= '0' && str[n + a] <= '9')
 		a++;
-	if (a > 19 && s == 1)
-		return (-1);
-	if (a > 19 && s == -1)
+	if (a > 10 && s == 1)
+		return (0);
+	if (a > 10 && s == -1)
 		return (0);
 	while (str[n] >= '0' && str[n] <= '9')
 	{
@@ -31,9 +31,9 @@ static int	mk_check_atoi(const char *str, int n, int s)
 		l += str[n] - '0';
 		n++;
 	}
-	if (l > 9223372036854775807 && s == 1)
-		return (-1);
-	if (l > 9223372036854775807 && s == -1 && str[n - 1] > '8')
+	if (l > 2147483647 && s == 1)
+		return (0);
+	if (l > 2147483648 && s == -1)
 		return (0);
 	return (1);
 }
@@ -56,7 +56,7 @@ int	ft_atoi(const char *str)
 			s = -s;
 		n++;
 	}
-	if (mk_check_atoi(str, n, s) == -1 || mk_check_atoi(str, n, s) == 0)
+	if (mk_check_atoi(str, n, s) == 0)
 		return (mk_check_atoi(str, n, s));
 	while (str[n] >= '0' && str[n] <= '9')
 	{

@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/09 17:04:33 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/02/23 14:22:47 by mkoyamba         ###   ########.fr       */
+/*   Created: 2022/02/23 12:48:32 by mkoyamba          #+#    #+#             */
+/*   Updated: 2022/02/24 14:33:24 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	stop_error(void)
 {
-	t_list	*follow;
-	t_list	*temp;
+	ft_printf("Error\n");
+	exit(0);
+}
 
-	if (!lst || !*lst)
-		return ;
-	follow = (*lst)->next;
-	ft_lstdelone(*lst, del);
-	while (follow)
-	{
-		temp = follow->next;
-		ft_lstdelone(follow, del);
-		follow = temp;
-	}
-	*lst = NULL;
+void	stack_free(t_data *main_data)
+{
+	free(main_data->stack);
+	free(main_data);
+	stop_error();
 }
