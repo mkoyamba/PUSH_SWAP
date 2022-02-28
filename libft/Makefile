@@ -6,7 +6,7 @@
 #    By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/21 11:15:44 by mkoyamba          #+#    #+#              #
-#    Updated: 2022/02/21 11:54:55 by mkoyamba         ###   ########.fr        #
+#    Updated: 2022/02/28 13:11:07 by mkoyamba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,8 +69,6 @@ SRC =	ft_printf.c\
 		ft_lstclear.c \
 		ft_lstadd_back.c \
 		ft_lstiter.c \
-		get_next_line.c \
-		get_next_line_utils.c \
 
 OBJ = $(SRC:.c=.o)
 
@@ -81,7 +79,7 @@ $(NAME): $(OBJ)
 	ranlib $(NAME)
 
 %.o: %.c
-	gcc $(FLAGS) -I $(INCLUDES) -D BUFFER_SIZE=42 -c $< -o $@
+	gcc $(FLAGS) -I $(INCLUDES) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)

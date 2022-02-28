@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 20:34:28 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/02/23 11:54:19 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2022/02/28 13:11:44 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,7 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -105,13 +104,5 @@ void	ft_flag_s(va_list args, int *nb);
 void	ft_flag_u(va_list args, int *nb);
 void	ft_flag_x(va_list args, int *nb);
 void	ft_flag_bx(va_list args, int *nb);
-
-/*  	GET NEXT LINE	  */
-
-char	*get_next_line(int fd);
-char	*ft_read(int fd, char *str);
-char	*ft_get_line(char *str);
-char	*ft_update(char *str);
-char	*ft_strjoin_gnl(char *str, char *buff);
 
 #endif

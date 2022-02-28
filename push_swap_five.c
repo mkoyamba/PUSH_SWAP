@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   push_swap_five.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 12:48:32 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/02/28 12:47:44 by mkoyamba         ###   ########.fr       */
+/*   Created: 2022/02/28 12:25:26 by mkoyamba          #+#    #+#             */
+/*   Updated: 2022/02/28 13:09:55 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	stop_error(void)
-{
-	write(2, "Error\n", 6);
-	exit(0);
-}
-
-void	stack_free(t_data *main_data, int state)
-{
-	free(main_data->stack);
-	free(main_data);
-	if (state == 1)
-		stop_error();
-}
-
-int	is_sorted(t_data *main_data)
+void	small_five(t_data *main_data)
 {
 	int	n;
 
-	n = main_data->sep - 1;
-	while (n > -1)
+	n = 0;
+	if (main_data->stack[4] == 0)
 	{
-		if (main_data->stack[n] != n)
-			return (0);
-		n--;
+		move_rra(main_data);
+		n = 1;
 	}
-	return (1);
+	else if (main_data->stack[3] == 0)
+	{
+		move_rra(main_data);
+		move_rra(main_data);
+		n = 1;
+	}
+	while (main_data->stack[0] != 0 && n == 0)
+		move_ra(main_data);
+	move_pb(main_data);
+	n = 0;
+	while (n < main_data->sep)
+	{
+		main_data->stack[n] -= 1;
+		n++;
+	}
+	small_four(main_data);
+	move_pa(main_data);
 }

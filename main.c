@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 12:09:57 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/02/24 22:36:33 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2022/02/28 11:49:24 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,10 @@ int	main(int argc, char **argv)
 		stop_error();
 	main_data = main_init(argv, argc);
 	swap_stack(main_data);
-	if (main_data->len < 2)
-		stack_free(main_data, 0);
 	if (main_data->len > 5)
 		push_swap(main_data);
-	else
-		ft_printf("small\n");
+	else if (main_data->len > 1)
+		small_push_swap(main_data);
 	stack_free(main_data, 0);
 	return (0);
 }

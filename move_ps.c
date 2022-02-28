@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 18:34:32 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/02/24 22:37:56 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2022/02/28 13:10:03 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,14 @@ void	move_pa(t_data *main_data)
 	}
 	main_data->stack[0] = temp;
 	ft_printf("pa\n");
+}
+
+void	move_sa(t_data *main_data)
+{
+	int	temp;
+
+	temp = main_data->stack[0];
+	main_data->stack[0] = main_data->stack[1];
+	main_data->stack[1] = temp;
+	ft_printf("sa\n");
 }
