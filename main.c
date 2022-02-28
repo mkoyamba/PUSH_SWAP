@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 12:09:57 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/02/28 11:49:24 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2022/02/28 13:52:09 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 {
 	t_data	*main_data;
 
-	if (argc < 2)
+	if (argc < 2 || argv[1][0] == '\0')
 		exit (0);
 	if (!check_argv(argv, argc))
 		stop_error();

@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:14:15 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/02/24 22:11:03 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2022/02/28 13:28:29 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int	check_argv(char **av, int ac)
 		{
 			if (n == 0 && (av[i][0] == '+' || av[i][0] == '-'))
 				n++;
-			if (av[i][n] && !ft_isdigit(av[i][n]))
+			if (!av[i][n] || !ft_isdigit(av[i][n]))
 				return (0);
 			n++;
 		}
-		n = -1;
+		n = 0;
 		i++;
 	}
 	return (1);

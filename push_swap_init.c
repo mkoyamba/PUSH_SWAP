@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:05:34 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/02/28 11:36:02 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2022/02/28 13:44:13 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,20 @@ int	check_two_arg(char *str)
 
 	n = 0;
 	if (ft_strlen(str) < 1
-		|| !(ft_isdigit(str[0]) || str[0] == '-' || str[0] == '+'))
+		|| (!ft_isdigit(str[0]) && str[0] != '-' && str[0] != '+'))
 		return (0);
 	if ((str[0] == '-' || str[0] == '+')
 		&& (ft_strlen(str) < 2))
 		return (0);
-	while (n < ft_strlen(str))
+	while (str[n] && n < ft_strlen(str))
 	{
+		if ((str[n] == '-' || str[n] == '+')
+			&& (!str[n + 1] || !ft_isdigit(str[n + 1])))
+			return (0);
 		if (!(str[n] == '-' || str[n] == '+' || ft_isdigit(str[n])))
 			return (0);
 		n++;
-		while (str[n] && (ft_isdigit(str[n]) || str[n] == '.'))
+		while (str[n] && ft_isdigit(str[n]))
 			n++;
 		if (str[n] && str[n] != ' ' && str[n] != '\t')
 			return (0);

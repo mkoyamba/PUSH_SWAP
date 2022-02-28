@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 11:56:26 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/02/28 13:07:26 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2022/02/28 13:52:15 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	push_swap(t_data *main_data)
 	size_t	n;
 
 	if (is_sorted(main_data))
-		stack_free(main_data, 0);
+		return ;
 	n = 0;
 	while (!is_sorted(main_data))
 	{
