@@ -6,11 +6,11 @@
 #    By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/21 11:29:03 by mkoyamba          #+#    #+#              #
-#    Updated: 2022/02/28 13:10:44 by mkoyamba         ###   ########.fr        #
+#    Updated: 2022/04/25 14:23:25 by mkoyamba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 NAME = push_swap
 

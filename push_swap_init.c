@@ -6,7 +6,7 @@
 /*   By: mkoyamba <mkoyamba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:05:34 by mkoyamba          #+#    #+#             */
-/*   Updated: 2022/02/28 13:44:13 by mkoyamba         ###   ########.fr       */
+/*   Updated: 2022/04/25 14:24:21 by mkoyamba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ t_data	*main_init(char **av, int ac)
 		stop_error();
 	if (!data[0])
 		data_free(data, 1);
-	main_data = malloc(sizeof(t_data *));
+	main_data = malloc(sizeof(t_data));
 	if (!main_data)
 		data_free(data, 1);
 	main_data->len = 0;
